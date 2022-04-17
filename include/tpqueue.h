@@ -19,7 +19,7 @@ class TPQueue {
         throw std::string("Full!");
       } else {
         int count = last -1;
-        while (count >= last && count.prior > arr[count % size].prior){
+        while (count >= last && count.prior > arr[count % size].prior) {
           arr[(count + 1) % size] = arr[count % size];
           count--;
         }
@@ -28,12 +28,11 @@ class TPQueue {
       }
     }
     T Pop() {
-      if(first < last) {
+      if (first < last) {
         return arr[(first++) % size];
-      }
-      else
+      } else
         throw std::string("Empty!");
-    };
+    }
 };
 
 struct SYM {
