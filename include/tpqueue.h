@@ -10,7 +10,7 @@ class TPQueue {
   int first, last;
 
  public:
-    TQueue(): first(0), last(0) {}
+    TPQueue(): first(0), last(0) {}
     int getSize() {
       return last - first;
     }
@@ -27,7 +27,7 @@ class TPQueue {
         last++;
       }
     }
-    T Pop() {
+    T pop() {
       if (first == last) {
         throw std::string("Empty!");
       } else {
