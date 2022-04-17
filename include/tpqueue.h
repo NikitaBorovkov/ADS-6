@@ -1,7 +1,6 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
-
 template<typename T, int size>
 class TPQueue {
   private:
@@ -9,11 +8,9 @@ class TPQueue {
     int first, last;
   public:
     TQueue(): first{0}, last{0} {};
-    
     int getSize() {
       return last - first;
     }
-    
     void push(T x) {
       if (getSize() >= size) {
         throw std::string("Full!");
@@ -26,9 +23,7 @@ class TPQueue {
         arr[(count + 1) % size] = x;
         last++;
       }
-      
     }
-    
     T Pop() {
       if(first < last) {
         return arr[(first++) % size];
@@ -36,7 +31,6 @@ class TPQueue {
       else
         throw std::string("Empty!");
     };
-    
 };
 
 struct SYM {
