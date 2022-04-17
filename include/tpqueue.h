@@ -30,8 +30,9 @@ class TPQueue {
     T Pop() {
       if (first < last) {
         return arr[(first++) % size];
-      } else
+      } else {
         throw std::string("Empty!");
+      }
     }
 };
 
