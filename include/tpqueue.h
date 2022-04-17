@@ -18,7 +18,7 @@ class TPQueue {
       if (getSize() >= size) {
         throw std::string("Full!");
       } else {
-        int count = last -1;
+        int count = last - 1;
         while (count >= last && x.prior > arr[count % size].prior) {
           arr[(count + 1) % size] = arr[count % size];
           count--;
@@ -28,10 +28,10 @@ class TPQueue {
       }
     }
     T Pop() {
-      if (first < last) {
-        return arr[(first++) % size];
-      } else {
+      if (first == last) {
         throw std::string("Empty!");
+      } else {
+        return arr[(first++) % size];
       }
     }
 };
